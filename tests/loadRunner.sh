@@ -39,7 +39,7 @@ then
 fi
   
 
-echo 'Run on' $1 "environment | duration time is" $2 "| RPS is multiplied by" $3 "| Results will be written to InfluxDB on" $4
+echo "Run on" $1 "environment | duration time is" $2 "| RPS is multiplied by" $3 "| Delay is" $4 "| Results will be written to InfluxDB on" $5
 # ./k6 run -o influxdb=http://localhost:8086/k6 -e host=$HOST -e time=$TIME -e xRPS=$XRPS -e delay=$DELAY ./tests/main.js
 # ./k6 run -e host=$HOST -e schema=$SCHEME -e time=$TIME -e xRPS=$RPS -o influxdb=$INFLUXDB_ADDR ./tests/main.js
 
