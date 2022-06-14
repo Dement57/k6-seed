@@ -18,11 +18,11 @@ docker-compose up grafana influxdb
 k6 run -o influxdb=http://localhost:8086/ main.js
 
 ## Run by loadRunner.sh file with parameters $1 $2 $3
-### first parameter $1 defines host for requests. If it is not defined or value is not "prod" it will be test environment 
-### second parameter $1 defines time - test duration, for example "1s, 1m, 1h". If it is not defined duration will be 1 hour
-### third parameter $2 defines RPS multiplier - multiplies rps of each test. By default value is 1.
-### fourth parameter $4 defines delay (in seconds) for create account case (createAccount.js), by default 0.7 (in seconds);
-### fifth parameter $5 defines influxDB address;
+ first parameter $1 defines host for requests. If it is not defined or value is not "prod" it will be test environment 
+ second parameter $1 defines time - test duration, for example "1s, 1m, 1h". If it is not defined duration will be 1 hour
+ third parameter $2 defines RPS multiplier - multiplies rps of each test. By default value is 1.
+ fourth parameter $4 defines delay (in seconds) for create account case (createAccount.js), by default 0.7 (in seconds);
+ fifth parameter $5 defines influxDB address;
 
 ### Run loadTests on "test environment", "during 1 hour", "rps for all tests multiply by 1 (i.e. 1x)", "delay for create account case";
 sh loadRunner.sh test 1h 1 0.8
@@ -49,7 +49,7 @@ docker image build --tag lys-docker .
 ## Run $1 = HOST $2 = TIME $2 = TIME $3 = XRPS $4 = DELAY $4 = debug
 sh dockerLoadRunner.sh test 1m 1 0.6
 ## Run through Docker Compose file
-### Builf
+### Build
 docker-compose build k6
 ### Run
 sh dockerLoadRunner.sh test 2m 0.2 0.8 
