@@ -1,9 +1,9 @@
-FROM docker.art.lmru.tech/golang:1.18.3-alpine3.16 AS builder
+FROM golang:1.18.3-alpine3.16 AS builder
 
 RUN go install go.k6.io/xk6/cmd/xk6@latest && \
     xk6 build v0.40.0 --with github.com/avitalique/xk6-file@latest
 
-FROM docker.art.lmru.tech/alpine:3.15
+FROM alpine:3.15
 
 COPY --from=builder /go/k6 /usr/local/bin/
 
