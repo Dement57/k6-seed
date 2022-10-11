@@ -4,10 +4,7 @@
 # second parameter $1 defines time - test duration, for example "1s, 1m, 1h". If it is not defined duration will be 1 hour
 # third parameter $2 defines RPS multiplier - multiplies rps of each test. By default value is 1.
 # fourth parameter $4 defines delay (in seconds) for some cases, by default x.x (in seconds);
-
-sh ./genToken/genToken.sh $1
-GEN_TOKEN_FILE=./genToken/tokens.txt
-  echo "VARS" $1 $2 $3 $4
+echo "VARS" $1 $2 $3 $4
 
 if [[ $1 == "prod" ]]
 then
