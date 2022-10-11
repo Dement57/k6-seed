@@ -25,4 +25,5 @@ services:
     volumes:
       - "./tests:/tests"
     env_file:
-      - .env
+      - .env.production.local
+

@@ -1,8 +1,12 @@
-FROM grafana/grafana:5.2.4
+# New version 8.2.6; Old version 5.2.4
+FROM grafana/grafana:8.2.6
+# FROM grafana/grafana:5.2.4
 
 USER root
 
-RUN apt-get update && apt-get -y install curl
+# For new version RUN apk update && apk add curl
+# RUN apt-get update && apt-get -y install curl
+RUN apk update && apk add curl
 
 
 # Change the default data directory (otherwise grafana.db won't persist)
