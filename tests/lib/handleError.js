@@ -15,6 +15,6 @@ export function handleError(requestObj, errorArr) {
         code300th[3].add(1)
     } else {
         console.error(`---LOGERROR---\nREQUEST: ${JSON.stringify(requestObj.request.method)} ${JSON.stringify(requestObj.request.url)}\nBODY: ${JSON.stringify(requestObj.request.body)}\nRESPONSE STATUS: ${JSON.stringify(requestObj.status_text)}\nRESPONSE BODY: ${JSON.stringify(requestObj.body)}\nDURATION TIME (REQ + RES): ${requestObj.timings.duration}\n\n`);
-        otherError[3].add(1)
+        otherError[4].add(1)
     }
 }

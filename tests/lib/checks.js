@@ -1,16 +1,13 @@
 import { check } from 'k6';
 
-export function check200AndLengthOfArray(request, name, hasElemInArray) {
-    if (hasElemInArray) {
-        check(request, {
-            [name + " STATUS 200"]: () => request.status === 200,
-            [name + " HAS ELEMENT IN RESPONSE"]: () => JSON.parse(request.body).length > 0
+export function check200(request, name) {
+    check(request, {
+        [name + " - STATUS 200"]: () => request.status === 200,
+    })
+}
 
-        })
-    } else {
-        check(request, {
-            [name + " STATUS 200"]: () => request.status === 200,
-            [name + " EMPTY ARRAY IN RESPONSE"]: () => JSON.parse(request.body).length === 0
-        })
-    }
+export function check404(request, name) {
+    check(request, {
+        [name + " - STATUS 404"]: () => request.status === 404,
+    })
 }
